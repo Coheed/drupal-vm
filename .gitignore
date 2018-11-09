@@ -26,3 +26,4 @@ Vagrantfile.local
 /drupal/
 
 *.sql
+docroot/
