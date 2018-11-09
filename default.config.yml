@@ -3,9 +3,9 @@ vagrant_box: geerlingguy/ubuntu1604
 vagrant_user: vagrant
 vagrant_synced_folder_default_type: nfs
 vagrant_gui: false
-vagrant_hostname: real.env
-vagrant_machine_name: real
-vagrant_ip: 192.168.88.74
+vagrant_hostname: real.env #ChangeMe
+vagrant_machine_name: real #ChangeMe
+vagrant_ip: 192.168.88.74 #ChangeMe
 vagrant_public_ip: ""
 vagrant_synced_folders:
 - local_path: .
@@ -36,7 +36,7 @@ drupal_composer_project_package: "drupal-composer/drupal-project:8.x-dev"
 drupal_composer_project_options: "--prefer-dist --stability dev --no-interaction"
 
 drupal_install_site: false
-
+#ChangeMe
 drupal_core_path: "{{ drupal_composer_install_dir }}/web"
 drupal_core_owner: "{{ drupalvm_user }}"
 drupal_db_user: drupal
