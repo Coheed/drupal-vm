@@ -3,8 +3,8 @@ vagrant_box: geerlingguy/ubuntu1604
 vagrant_user: vagrant
 vagrant_synced_folder_default_type: nfs
 vagrant_gui: false
-vagrant_hostname: thunder.env #ChangeMe
-vagrant_machine_name: thunder #ChangeMe
+vagrant_hostname: local.env #ChangeMe
+vagrant_machine_name: local #ChangeMe
 vagrant_ip: 192.168.88.65 #ChangeMe
 vagrant_public_ip: ""
 vagrant_synced_folders:
@@ -37,7 +37,7 @@ drupal_composer_project_options: "--prefer-dist --stability dev --no-interaction
 
 drupal_install_site: false
 #ChangeMe - web -> docroot
-drupal_core_path: "{{ drupal_composer_install_dir }}/docroot"
+drupal_core_path: "{{ drupal_composer_install_dir }}/web"
 drupal_core_owner: "{{ drupalvm_user }}"
 drupal_db_user: drupal
 drupal_db_password: drupal
