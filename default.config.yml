@@ -1,7 +1,6 @@
 ---
 # Available `vagrant_box` values include:
-#   - beet/box (pre-provisioned, based on Ubuntu 16.04)
-#   - geerlingguy/drupal-vm (pre-provisioned, based on Ubuntu 16.04)
+#   - geerlingguy/drupal-vm (pre-provisioned, based on Ubuntu 18.04)
 #   - geerlingguy/centos7
 #   - geerlingguy/centos6
 #   - geerlingguy/debian9
@@ -18,7 +17,7 @@ vagrant_gui: false
 # machine name, and IP address for each instance.
 vagrant_hostname: local.env #ChangeMe
 vagrant_machine_name: local #ChangeMe
-vagrant_ip: 192.168.88.65 #ChangeMe
+vagrant_ip: 192.168.88.88 #ChangeMe
 
 # Allow Drupal VM to be accessed via a public network interface on your host.
 # Vagrant boxes are insecure by default, so be careful. You've been warned!
@@ -211,26 +210,26 @@ postgresql_users:
 # Comment out any extra utilities you don't want to install. If you don't want
 # to install *any* extras, set this value to an empty set, e.g. `[]`.
 installed_extras:
-- adminer
-# - blackfire
-- drupalconsole
-- drush
-# - elasticsearch
-# - java
-- mailhog
-# - memcached
-# - newrelic
-# - nodejs
-- pimpmylog
-# - redis
-# - ruby
-# - selenium
-# - solr
-# - tideways
-# - upload-progress
-- varnish
-- xdebug
-# - xhprof # use `tideways` if you're installing PHP 7+
+  - adminer
+  # - blackfire
+  - drupalconsole
+  - drush
+  # - elasticsearch
+  # - java
+  - mailhog
+  # - memcached
+  # - newrelic
+  # - nodejs
+  - pimpmylog
+  # - redis
+  # - ruby
+  # - selenium
+  # - solr
+  # - tideways
+  # - upload-progress
+  - varnish
+  - xdebug
+  # - xhprof # use `tideways` if you're installing PHP 7+
 
 # Add any extra apt or yum packages you would like installed.
 extra_packages:
@@ -310,6 +309,7 @@ npm_config_prefix: "/home/{{ drupalvm_user }}/.npm-global"
 ruby_install_gems_user: "{{ drupalvm_user }}"
 ruby_install_gems: []
 
+# Varnish Configuration (if enabled above).
 varnish_listen_port: "81"
 varnish_default_vcl_template_path: templates/drupalvm.vcl.j2
 varnish_default_backend_host: "127.0.0.1"
