@@ -47,13 +47,13 @@ vagrant_plugins:
 
 # Minimum required versions.
 drupalvm_vagrant_version_min: '1.8.6'
-drupalvm_ansible_version_min: '2.4'
+drupalvm_ansible_version_min: '2.5'
 
 # Force use of ansible_local provisioner, even if Ansible is installed on host.
 force_ansible_local: false
 
 # The web server software to use. Can be either 'apache' or 'nginx'.
-drupalvm_webserver: nginx
+drupalvm_webserver: apache
 
 # The database system to use. Can be either 'mysql' or 'pgsql'.
 drupal_db_backend: mysql
@@ -255,11 +255,11 @@ firewall_log_dropped_packets: false
 firewall_disable_firewalld: true
 firewall_disable_ufw: true
 
-# PHP Configuration. Currently-supported versions: 5.6, 7.0, 7.1, 7.2.
+# PHP Configuration. Currently-supported versions: 7.1, 7.2, 7.3.
 # See version-specific notes: http://docs.drupalvm.com/en/latest/configurations/php/
-php_version: "7.1"
+php_version: "7.2"
 php_install_recommends: no
-php_memory_limit: "600M"
+php_memory_limit: "300M"
 php_display_errors: "On"
 php_display_startup_errors: "On"
 php_realpath_cache_size: "1024K"
@@ -272,7 +272,6 @@ php_max_input_vars: "4000"
 # Drupal VM defaults to using PHP-FPM with either Apache or Nginx. If you wish
 # to instead use Apache + mod_php with an Ubuntu base box, make sure you add
 # libapache2-mod-php7.0 to `extra_packages` elsewhere in this config file.
-php_post_max_size: "500M"
 php_enable_php_fpm: true
 php_fpm_listen: "127.0.0.1:9000"
 
@@ -298,8 +297,8 @@ mysql_wait_timeout: 300
 adminer_install_filename: index.php
 
 # Node.js configuration (if enabled above).
-# Valid examples: "0.10", "0.12", "4.x", "5.x", "6.x".
-nodejs_version: "6.x"
+# Valid examples: "6.x", "8.x", "10.x", etc.
+nodejs_version: "10.x"
 nodejs_npm_global_packages:
   - name: npm
 nodejs_install_npm_user: "{{ drupalvm_user }}"
