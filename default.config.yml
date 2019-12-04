@@ -15,9 +15,9 @@ vagrant_gui: false
 
 # If you need to run multiple instances of Drupal VM, set a unique hostname,
 # machine name, and IP address for each instance.
-vagrant_hostname: local.env #ChangeMe
-vagrant_machine_name: local #ChangeMe
-vagrant_ip: 192.168.88.88 #ChangeMe
+vagrant_hostname: dzw.env #ChangeMe
+vagrant_machine_name: dzw #ChangeMe
+vagrant_ip: 192.168.88.84 #ChangeMe
 
 # Allow Drupal VM to be accessed via a public network interface on your host.
 # Vagrant boxes are insecure by default, so be careful. You've been warned!
@@ -83,7 +83,7 @@ drupal_composer_project_options: "--prefer-dist --stability dev --no-interaction
 drupal_install_site: false
 
 # Required Drupal settings.
-drupal_core_path: "{{ drupal_composer_install_dir }}/docroot"
+drupal_core_path: "{{ drupal_composer_install_dir }}/web"
 drupal_core_owner: "{{ drupalvm_user }}"
 drupal_db_user: drupal
 drupal_db_password: drupal
