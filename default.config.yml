@@ -15,9 +15,9 @@ vagrant_gui: false
 
 # If you need to run multiple instances of Drupal VM, set a unique hostname,
 # machine name, and IP address for each instance.
-vagrant_hostname: local.env #ChangeMe
-vagrant_machine_name: local #ChangeMe
-vagrant_ip: 192.168.88.88 #ChangeMe
+vagrant_hostname: arp.env #ChangeMe
+vagrant_machine_name: arp #ChangeMe
+vagrant_ip: 192.168.88.89 #ChangeMe
 
 # Allow Drupal VM to be accessed via a public network interface on your host.
 # Vagrant boxes are insecure by default, so be careful. You've been warned!
@@ -83,7 +83,7 @@ drupal_composer_project_options: "--prefer-dist --stability dev --no-interaction
 drupal_install_site: false
 
 # Required Drupal settings.
-drupal_core_path: "{{ drupal_composer_install_dir }}/docroot"
+drupal_core_path: "{{ drupal_composer_install_dir }}/drupal"
 drupal_core_owner: "{{ drupalvm_user }}"
 drupal_db_user: drupal
 drupal_db_password: drupal
@@ -216,11 +216,11 @@ installed_extras:
   - drush
   # - elasticsearch
   # - java
-  - mailhog
+  # - mailhog
   # - memcached
   # - newrelic
   # - nodejs
-  - pimpmylog
+  # - pimpmylog
   # - redis
   # - ruby
   # - selenium
@@ -228,7 +228,7 @@ installed_extras:
   # - tideways
   # - upload-progress
   - varnish
-  - xdebug
+  # - xdebug
   # - xhprof # use `tideways` if you're installing PHP 7+
 
 # Add any extra apt or yum packages you would like installed.
@@ -257,7 +257,7 @@ firewall_disable_ufw: true
 
 # PHP Configuration. Currently-supported versions: 7.1, 7.2, 7.3.
 # See version-specific notes: http://docs.drupalvm.com/en/latest/configurations/php/
-php_version: "7.2"
+php_version: "5.6"
 php_install_recommends: no
 php_memory_limit: "300M"
 php_display_errors: "On"
