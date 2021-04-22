@@ -37,8 +37,20 @@ The port through which you'd like SSH to be accessible. The default is port 22, 
     security_ssh_password_authentication: "no"
     security_ssh_permit_root_login: "no"
     security_ssh_usedns: "no"
+    security_ssh_permit_empty_password: "no"
+    security_ssh_challenge_response_auth: "no"
+    security_ssh_gss_api_authentication: "no"
+    security_ssh_x11_forwarding: "no"
 
 Security settings for SSH authentication. It's best to leave these set to `"no"`, but there are times (especially during initial server configuration or when you don't have key-based authentication in place) when one or all may be safely set to `'yes'`. **NOTE: It is _very_ important that you quote the 'yes' or 'no' values. Failure to do so may lock you out of your server.**
+
+    security_sshd_state: started
+
+The state of the SSH daemon. Typically this should remain `started`.
+
+    security_ssh_restart_handler_state: restarted
+
+The state of the `restart ssh` handler. Typically this should remain `restarted`.
 
     security_sudoers_passwordless: []
     security_sudoers_passworded: []
@@ -68,7 +80,11 @@ Whether to install/enable `yum-cron` (RedHat-based systems) or `unattended-upgra
 
     security_fail2ban_enabled: true
 
-Wether to install/enable `fail2ban`. You might not want to use fail2ban if you're already using some other service for login and intrusion detection (e.g. [ConfigServer](http://configserver.com/cp/csf.html)).
+Whether to install/enable `fail2ban`. You might not want to use fail2ban if you're already using some other service for login and intrusion detection (e.g. [ConfigServer](http://configserver.com/cp/csf.html)).
+
+    security_fail2ban_custom_configuration_template: "jail.local.j2"
+
+The name of the template file used to generate `fail2ban`'s configuration.
 
 ## Dependencies
 
